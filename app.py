@@ -315,15 +315,12 @@ if __name__ == "__main__":
     
 
 
-# In[6]:
 
 
-baseimg = face_recognition.load_image_file("static/img/binura.jpeg")
-baseimg
 
 
-# In[7]:
 
 
-get_ipython().system('pip list')
+
+
 
