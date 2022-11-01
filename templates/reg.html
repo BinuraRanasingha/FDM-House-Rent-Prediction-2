@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Regression</title>
+	<style>
+		.slidecontainer {
+		  width: 100%;
+		}
+
+		.slider {
+		  -webkit-appearance: none;
+		  width: 100%;
+		  height: 10px;
+		  border-radius: 5px;
+		  background: #d3d3d3;
+		  outline: none;
+		  opacity: 0.7;
+		  -webkit-transition: .2s;
+		  transition: opacity .2s;
+		}
+
+		.slider:hover {
+		  opacity: 1;
+		}
+
+		.slider::-webkit-slider-thumb {
+		  -webkit-appearance: none;
+		  appearance: none;
+		  width: 23px;
+		  height: 24px;
+		  border: 0;
+		  background: url('../static/img/line.png');
+		  cursor: pointer;
+		}
+
+		.slider::-moz-range-thumb {
+		  width: 23px;
+		  height: 24px;
+		  border: 0;
+		  background: url('.png');
+		  cursor: pointer;
+		}
+ </style>
+
+	<!-- Google font -->
+	<link href="http://fonts.googleapis.com/css?family=Playfair+Display:900" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.googleapis.com/css?family=Alice:400,700" rel="stylesheet" type="text/css" />
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../static/css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="../static/css/reg_style.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body>
+
+
+
+
+
+	<div id="booking" class="section">
+	<nav class="navbar nav1">
+	<a class="navbar-brand navbar-nav" href="/">Home</a>
+	</nav>
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="booking-bg">
+							<div class="form-header">
+								<h2>Size Evaluation</h2>
+								<h3>Predicted Rent :{{prediction_text}}</h3>
+							</div>
+						</div>
+						<form action="{{ url_for('predict')}}" method="post">
+							<div class="row">
+								<div class="col-md-6">
+								<div class="slidecontainer">
+								<span class="form-label">Number of Rooms</span>
+									  <input type="range" min="1" max="10" value="1" class="slider" name="room" id="myRange">
+									  <p>Value: <span id="demo"></span></p>
+								</div>
+								</div>
+								<div class="col-md-6">
+									<div class="slidecontainer">
+									<span class="form-label">Number of Bathrooms</span>
+									  <input type="range" name="bath" min="1" max="5" value="1" class="slider" id="myRange2">
+									  <p>Value: <span id="demo2"></span></p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Size</span>
+										<input type="number" class="form-control" name="size" id="inputAddress" placeholder="725.2">
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Room Type</span>
+								<select class="form-control" name="area" required>
+									<option  selected hidden>Select area type</option>
+									<option value="1">Super Area</option>
+									<option value="0">Carpet Area</option>
+									<option value="0">Built Area</option>
+								</select>
+								<span class="select-arrow"></span>
+							</div>
+							<div class="form-btn">
+								<button type="submit"class="submit-btn">Predict</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	var slider = document.getElementById("myRange");
+	var output = document.getElementById("demo");
+	output.innerHTML = slider.value;
+
+	slider.oninput = function() {
+	  output.innerHTML = this.value;
+	}
+	
+	var slider1 = document.getElementById("myRange2");
+	var output1 = document.getElementById("demo2");
+	output1.innerHTML = slider.value;
+
+	slider1.oninput = function() {
+	  output1.innerHTML = this.value;
+	}
+	</script>
+</body>
+
+</html>

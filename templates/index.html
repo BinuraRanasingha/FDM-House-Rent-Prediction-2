@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>House Rent Prediction</title>
+  
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            
+            <div class="col-lg-8">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+					<div  class="mr-auto p-2 nav-item nav-link active"   >
+                             <div class="btn-group">
+								<button type="button" data-toggle="dropdown" class="mr-auto p-2 btn btn-outline-light dropdown-toggle py-1 px-1 mt-1 animate__animated animate__fadeInUp ">My Account</button>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a href="/login" class="btn btn-primary">Login</a>
+									<a href="/logout" class="btn btn-primary">Logout</a>
+								</div>
+							</div>
+                        </div>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="#" class="nav-item nav-link active">Home</a>
+                       
+                            
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid mb-3">
+        <div class="row px-xl-5">
+            <div class="col-lg-8">
+                <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#header-carousel" data-slide-to="1"></li>
+                        <li data-target="#header-carousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item position-relative active" style="height: 430px;">
+                            <img class="position-absolute w-100 h-100" src="../static/img/modernh1.jpg" style="object-fit: cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">House Analysis</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn"></p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item position-relative" style="height: 430px;">
+                            <img class="position-absolute w-100 h-100" src="../static/img/modernh3.jpg" style="object-fit: cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">House Prediction</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn"></p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product-offer mb-30" style="height: 200px;">
+                    <img class="img-fluid" src="../static/img/clas.jpg" alt="">
+                    <div class="offer-text">
+                        <h6 class="text-white text-uppercase"></h6>
+                        <h3 class="text-white mb-3">Estimate Predictions</h3>
+                        <a href="/est" class="btn btn-primary">Predict</a>
+                    </div>
+                </div>
+                <div class="product-offer mb-30" style="height: 200px;">
+                    <img class="img-fluid" src="../static/img/reg.jpg" alt="">
+                    <div class="offer-text">
+                        <h6 class="text-white text-uppercase"></h6>
+                        <h3 class="text-white mb-3">Size Based Predictions</h3>
+                        <a href="/size" class="btn btn-primary" >Predict</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+	
+	<!-- Content Row -->
+                    <div class="row px-xl-5">
+
+                        <!-- Earnings (Monthly) Card Example -->
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Rental Price Max (Current)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" >{{item[0]}}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-rupee-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						<!-- Trending Rental City Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Trending Rental City </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{item[2]}}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-city fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <!-- Rental Price (Average) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Rental Price (Average)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{item[1]}}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-rupee-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						
+						
+						
+
+                       
+                    </div>
+
+                    <!-- Content Row -->
+
+	
+	<div>
+		 <div class="row px-xl-5">
+
+                        <!-- Area Chart -->
+                        <div class="col px-xl-5">
+                            <div class="card shadow col-sm-11">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Average Rent for City</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="col-auto">
+									<center>
+										<img src="/figure1" width="600" height="600">
+										</center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						
+						
+						
+						</div>
+						</br></br></br>
+	<div class="row px-xl-5">
+						<div class="col px-xl-5">
+                            <div class="card shadow col-sm-11">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Tenant per City</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="col-auto">
+									<center>
+										<img src="/figure2" width="600" height="600">
+										</center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						
+						
+	</div>
+						
+						
+                        
+						
+						
+						
+						
+                    
+	</div>
+	
+	<div class="container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+					
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="#" class="nav-item nav-link active"></a>
+                       
+                            
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+	
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>
