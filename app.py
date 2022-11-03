@@ -4,7 +4,7 @@
 # In[1]:
 
 from IPython import get_ipython
-get_ipython().run_line_magic('cd', '/app/dataset')
+
 #important include the directory to the cloned folder
 
 
@@ -21,7 +21,7 @@ full_df = pd.read_csv("new_house.csv")
 # In[3]:
 
 
-get_ipython().run_line_magic('cd', '/app/dataset')
+
 #important include the directory to the cloned folder
 
 
