@@ -87,7 +87,7 @@ app = Flask(__name__)
 #app.config["SESSION_TYPE"] = "filesystem"
 #Session(app)
 
-#model = pickle.load(open('model/update_reg3.0.pkl', 'rb'))
+model = pickle.load(open('model/update_reg3.0.pkl', 'rb'))
 
 #Login
 #@app.route('/login_validation',methods=['POST','GET'])
