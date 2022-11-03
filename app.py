@@ -3,7 +3,7 @@
 
 # In[1]:
 
-
+from IPython import get_ipython
 get_ipython().run_line_magic('cd', '/app/dataset')
 #important include the directory to the cloned folder
 
